@@ -52,15 +52,15 @@ public class UserController {
 		return "redirect:/user/addUserView.jsp";
 	}
 	
-	@RequestMapping( value="addUser", method=RequestMethod.POST )
-	public String addUser( @ModelAttribute("user") User user ) throws Exception {
-
-		System.out.println("/user/addUser : POST");
-		//Business Logic
-		userService.addUser(user);
-		
-		return "redirect:/user/loginView.jsp";
-	}
+//	@RequestMapping( value="addUser", method=RequestMethod.POST )
+//	public String addUser( @ModelAttribute("user") User user ) throws Exception {
+//
+//		System.out.println("/user/addUser : POST");
+//		//Business Logic
+//		userService.addUser(user);
+//		
+//		return "redirect:/user/loginView.jsp";
+//	}
 	
 
 	@RequestMapping( value="getUser", method=RequestMethod.GET )

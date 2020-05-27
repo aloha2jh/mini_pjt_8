@@ -54,7 +54,7 @@ public class UserRestController {
 		System.out.println("/user/json/login : POST");
 		//Business Logic
 		System.out.println("::"+user);
-		User dbUser=userService.getUser(user.getUserId());
+		User dbUser = userService.getUser( user.getUserId()  );
 		
 		if( user.getPassword().equals(dbUser.getPassword())){
 			session.setAttribute("user", dbUser);
@@ -62,4 +62,23 @@ public class UserRestController {
 		
 		return dbUser;
 	}
+	 
+	
+	@RequestMapping( value="json/addUser", method=RequestMethod.POST )
+	public String login(	@RequestBody User user  ) throws Exception{
+	
+		System.out.println("/user/json/addUser : POST ∏ﬁº≠µÂ Ω««‡µ .");
+ 
+		System.out.println("::"+user);
+		
+		userService.addUser( user   );
+		
+		System.out.println( "»Ï."+user );
+		
+		return  "ok";
+	}
+	
+	
+	
+	
 }
